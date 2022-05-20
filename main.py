@@ -86,7 +86,6 @@ result_animal = animal_list[fate_num]
 #### 動物占いの結果は...
 '''
 st.write(result_animal)
-"(運命数.動物(色))"
 
 '''
 #### あなたにオススメの和菓子は...
