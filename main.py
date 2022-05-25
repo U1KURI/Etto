@@ -3,6 +3,7 @@ import numpy as np
 from datetime import date
 
 st.title("🍵和菓子占い！")
+"どうぶつ占いの結果をもとに、和菓子をオススメします！"
 "powered by 継承工学総合研究所"
 
 birthday = st.date_input(
@@ -135,6 +136,9 @@ links = [
 
 link = '[清浄歓喜団](https://kameyakiyonaga.co.jp/year01.html)'
 st.markdown(links[fate_num % 12], unsafe_allow_html=True)
+
+if (fate_num % 12) == 0:
+    st.image("SeijoKankidan_KameyaYoshinaga.png")
 
 ##
 # End of This File
