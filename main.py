@@ -137,8 +137,23 @@ links = [
 link = '[清浄歓喜団](https://kameyakiyonaga.co.jp/year01.html)'
 st.markdown(links[fate_num % 12], unsafe_allow_html=True)
 
-if (fate_num % 12) == 0:
-    st.image("SeijoKankidan_KameyaYoshinaga.png")
+
+imgs = [
+    "SeijoKankidan_KameyaYoshinaga.png",
+    "sekinoto.jpg",
+    "YorunoUme_Toraya.jpg",
+    "Irokoori_KashiKoto.webp",
+    "amanohara_Yui.jpg",
+    "NininShizuka_RyoguchiYaKorekiyo.jpg",
+    "SasayaIori_Dorayaki.jpg",
+    "HerbRakugan.png",
+    "AnWarabi_SeijoAnYa.jpg",
+    "Ikkokkou.jpg",
+    "KuYaMonaka.jpg",
+    "ManYouNoHana_MoroeYa.jpg"
+]
+
+st.image(imgs[fate_num % 12])
 
 ##
 # End of This File
