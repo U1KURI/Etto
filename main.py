@@ -142,7 +142,7 @@ if st.button("診断する", key=0):
   st.session_state["count"] += 1
  
 
-if st.session_state["count"] > 1:
+if st.session_state["count"] > 0:
 
     st.write("どうぶつ占いの結果が")
     st.write(result_animal)
