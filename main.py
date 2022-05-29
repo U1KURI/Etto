@@ -2,8 +2,14 @@ import streamlit as st
 import numpy as np
 from datetime import date
 
+# 診断ボタンが押されたかどうかの管理
+if 'count' not in st.session_state:
+  st.session_state["count"] = 0
+
+
+# 本文
 st.title("🍵和菓子占い！")
-"どうぶつ占いの結果をもとに、和菓子をオススメします！"
+"どうぶつ占いの結果に合わせて、和菓子をオススメします！"
 
 birthday = st.date_input(
     "🎉生年月日を選択してください🎉",
@@ -96,9 +102,6 @@ wagashi_list = [
 ]
 
 
-
-
-
 links = [
     '[清浄歓喜団](https://kameyakiyonaga.co.jp/year01.html)',
     '[関の戸](http://www.sekinoto.com/)',
@@ -113,10 +116,6 @@ links = [
     '[空也もなか](https://www.wagashi.or.jp/tokyo_link/shop/0337.htm)',
     '[万葉の花](https://moroeya.net/?pid=7218034)',
 ]
-
-link = '[清浄歓喜団](https://kameyakiyonaga.co.jp/year01.html)'
-st.markdown(links[fate_num % 12], unsafe_allow_html=True)
-
 
 imgs = [
     "SeijoKankidan_KameyaYoshinaga.png",
@@ -135,24 +134,23 @@ imgs = [
 
 
 fate_num = gap_days % 60
+result_animal = animal_list[fate_num]
+result_sweets = wagashi_list[fate_num % 12]
 
 
+if st.button("診断する", key=0):
+  st.session_state["count"] += 1
+ 
 
-if st.button("診断する"):
-    '''
-    #### 動物占いの結果が
-    '''
-    result_animal = animal_list[fate_num]
+if st.session_state["count"] > 1:
 
+    st.write("どうぶつ占いの結果が")
     st.write(result_animal)
 
-    '''
-    #### の あなたに オススメの和菓子は...
-    '''
-
-    result_sweets = wagashi_list[fate_num % 12]
+    st.write("の あなたに オススメの和菓子は...")
 
     st.write(result_sweets)
+    st.markdown(links[fate_num % 12], unsafe_allow_html=True)
     st.image(imgs[fate_num % 12])
 
 
