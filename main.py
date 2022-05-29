@@ -14,6 +14,9 @@ birthday = st.date_input(
 
 gap_days = (birthday - date(1921, 1, 1)).days
 
+
+
+
 animal_list = [
 "1.行動力のあるチーター.（イエロー）",
 "2.素直なたぬき.（グリーン）",
@@ -77,20 +80,6 @@ animal_list = [
 "60.自分の世界を持った虎.（パープル）"
 ]
 
-fate_num = gap_days % 60
-
-result_animal = animal_list[fate_num]
-
-
-'''
-#### 動物占いの結果が
-'''
-st.write(result_animal)
-
-'''
-#### の あなたに オススメの和菓子は...
-'''
-
 wagashi_list = [
     "「清浄歓喜団」 （唐菓子）京都・亀屋清永",
     "「関の戸」（求肥とこしあん 忍者） 三重 関宿・深川屋陸奥大掾",
@@ -106,9 +95,7 @@ wagashi_list = [
     "「万葉の花」（生落雁） 金沢・諸江屋"
 ]
 
-result_sweets = wagashi_list[fate_num % 12]
 
-st.write(result_sweets)
 
 
 
@@ -146,7 +133,27 @@ imgs = [
     "ManYouNoHana_MoroeYa.jpg"
 ]
 
-st.image(imgs[fate_num % 12])
+
+fate_num = gap_days % 60
+
+
+
+if st.button("診断する"):
+    '''
+    #### 動物占いの結果が
+    '''
+    result_animal = animal_list[fate_num]
+
+    st.write(result_animal)
+
+    '''
+    #### の あなたに オススメの和菓子は...
+    '''
+
+    result_sweets = wagashi_list[fate_num % 12]
+
+    st.write(result_sweets)
+    st.image(imgs[fate_num % 12])
 
 
 
