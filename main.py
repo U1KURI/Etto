@@ -149,7 +149,7 @@ if st.session_state["count"] > 0:
 
     st.write("の あなたに オススメの和菓子は...")
 
-    st.write(result_sweets)
+    st.write(result_sweets + " です！")
     st.markdown(links[fate_num % 12], unsafe_allow_html=True)
     st.image(imgs[fate_num % 12])
 
