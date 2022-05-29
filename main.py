@@ -4,7 +4,6 @@ from datetime import date
 
 st.title("🍵和菓子占い！")
 "どうぶつ占いの結果をもとに、和菓子をオススメします！"
-"powered by 継承工学総合研究所"
 
 birthday = st.date_input(
     "🎉生年月日を選択してください🎉",
@@ -84,12 +83,12 @@ result_animal = animal_list[fate_num]
 
 
 '''
-#### 動物占いの結果は...
+#### 動物占いの結果が
 '''
 st.write(result_animal)
 
 '''
-#### あなたにオススメの和菓子は...
+#### の あなたに オススメの和菓子は...
 '''
 
 wagashi_list = [
@@ -111,12 +110,6 @@ result_sweets = wagashi_list[fate_num % 12]
 
 st.write(result_sweets)
 
-
-# 清浄歓喜団 https://kameyakiyonaga.co.jp/year01.html
-# 関の戸 http://www.sekinoto.com/
-# あまのはら http://www.wagashi-yui.tokyo/
-# 
-# 一◯香 https://mogi105.com/c-item-detail?ic=0001-01
 
 
 links = [
@@ -155,6 +148,10 @@ imgs = [
 
 st.image(imgs[fate_num % 12])
 
+
+
+
+"powered by 継承工学総合研究所"
 ##
 # End of This File
 ##
