@@ -121,7 +121,7 @@ imgs = [
     "SeijoKankidan_KameyaYoshinaga.png",
     "sekinoto.jpg",
     "YorunoUme_Toraya.jpg",
-    "Irokoori_KashiKoto.webp",
+    "Irokoori_KashiKoto.jpg",
     "amanohara_Yui.jpg",
     "NininShizuka_RyoguchiYaKorekiyo.jpg",
     "SasayaIori_Dorayaki.jpg",
